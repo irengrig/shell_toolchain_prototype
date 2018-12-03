@@ -1,0 +1,14 @@
+workspace(name = "minimum_test")
+
+local_repository(
+    name = "main",
+    path = "../..",
+)
+
+load(":init_workspace.bzl", "init_workspace")
+
+init_workspace()
+
+load(":use_in_workspace.bzl", "use_shell_toolchain")
+
+use_shell_toolchain(name = "host_info")
